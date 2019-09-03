@@ -55,6 +55,57 @@ Source: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ## Creating a Repository
 
+### Creating a new Repository
+Creating a new repository needs you to login to Git repository hosting service such as Github, GitLab, or your own self hosted Git service. Once you have logged in, 
+
+1. Click on 'New Project' button.
+2. Provide a Project Name and Project Description (Optional)
+3. Choose Visibility option (Public or Private)
+4. Press 'Create Project'
+
+Note: The above steps may be different for some hosted service. It's recommended to read the documentation.
+
+Now that you have created your project, you can either clone the project or initializing a Repository in an Existing Directory
+
+### Configuring the repository
+Its better to configure your repository before pushing / commiting. To have a global configuration.
+
+1. `git config --global user.name <yourUserName>`
+2. `git config --global user.email <yourUserEmailId>`
+
+You can remove the `--global` option to configure just for a particular repository.
+
+### Clonning a repository
+Clonning simply means to download the project and start working on it. To clone a repository get the URL of your project found in the project page itself.
+
+Note : The URL should end in .git 
+Example : http://github.com/ganesh/testProject2.git
+
+Now on the desired directory, open the terminal and follow the steps to clone.
+
+1. `git clone <gitURL>`
+2. `cd <repositoryName>`
+3. `touch README.md`
+4. `git add README.md`
+5. `git commit -m "add README"`
+6. `git push -u origin master`
+
+Now you can start working on your directoy. We will get to add, commit, and push commands later in this document.
+
+### Initializing a Repository in an Existing Directory
+If you want your repository to be controlled using Git then go to that project’s directory. Open Terminal and type
+
+1. `cd existing_folder`
+2. `git init`
+
+This creates a new subdirectory named ```.git```. Note we haven't started tracking yet. To track,
+
+3. `git remote add origin <gitURL>`
+4. `git add .`
+5. `git commit -m "Initial commit"`
+6. `git push -u origin master`
+
+
 ## Creating a branch
 
 ### Branches
@@ -70,13 +121,17 @@ To get the list of all the branches in your repository.
 Now that we have created a repository, let's create a new branch. On your terminal, 
 
 ```git branch <branchName>```
-This creates a new branch, but you are still in master branch(In Git terminology your HEAD is still pointing to master branch). To shift/move the HEAD to the new branch we just created,
+
+This creates a new branch, but you are still in master branch(In Git terminology your HEAD is still pointing to master branch).
+
+To shift/move the HEAD to the new branch we just created,
 
 ```git checkout <branchName>```
 
 Alternatively, you can combine both the commands as follows
 
 ``` git checkout -b <branchName>```
+
 This creates the branch and checkouts(points the HEAD) to it immediately.
 
 
