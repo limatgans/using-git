@@ -6,6 +6,9 @@ Using GIT in your workflow
 2. [Installing Git](#Installing-Git)
 3. [Creating a Repository](#Creating-a-Repository)
 4. [Creating a branch](#Creating-a-branch)
+5. [Changes and Commiting](#Changes-and-Commiting)
+6. [Pull and Push](#Pull-and-Push)
+7. [Merging Branches](#Merging-Branches)
 
 
 ## What is Git?
@@ -49,7 +52,8 @@ On Mavericks (10.9) or above you can do this simply by trying to run git from th
 Follow any one of the following steps if you don't have git already in your machine,
 1. [Using Installer](https://git-scm.com/download/mac) or
 2. Install the Xcode Command Line Tools. or
-3. [GitHub Desktop Website](https://desktop.github.com/) 
+3. [GitHub Desktop Website](https://desktop.github.com/) or
+4. If you have [Homebrew](https://brew.sh/) already installed then run `brew install git` on a terminal
 
 Source: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
@@ -77,9 +81,15 @@ git config --global user.email <yourUserEmailId>
 You can remove the `--global` option to configure just for a particular repository.
 
 ### Clonning a repository
-Clonning simply means to download the project and start working on it. To clone a repository get the URL of your project found in the project page itself.
+Clonning simply means to download the project from *remote server* onto to *your local machine* and start working on it. To clone a repository get the URL of your project found in the project page itself.
 
-Note : The URL should end in .git 
+There are two ways to clone a repository, one using HTTPS another using SSH
+
+#### Using HTTPS
+The `https://` clone URLs are available on all repositories, public and private. These URLs work everywhere--even if you are behind a firewall or proxy. But everytime you do an operation involving remote directory, then you'll be asked for your username and password
+
+Note : The URL should start with `http://` or `https://` end in `.git` 
+
 Example : http://github.com/ganesh/testProject2.git
 
 Now on the desired directory, open the terminal and follow the steps to clone.
@@ -93,6 +103,11 @@ git commit -m "add README"
 git push -u origin master
 ```
 Now you can start working on your directoy. We will get to add, commit, and push commands later in this document.
+
+#### Using SSH
+The SSH protocol provides this security and allows you to authenticate to a Git remote server without supplying your username or password each time.
+
+> We won't be covering cloning using SSH here. But if you are interested, then you can follow the [tutorial here](https://help.github.com/en/articles/which-remote-url-should-i-use#cloning-with-ssh-urls)
 
 ### Initializing a Repository in an Existing Directory
 If you want your repository to be controlled using Git then go to that project’s directory. Open Terminal and type
@@ -150,7 +165,6 @@ When a existing file inside your repository (`tracked file`) is changed, it's `m
 A `staged` file is when you approve your changes and the file is now ready to be commited. 
 
 ![LifeCyle of a status of file](https://git-scm.com/book/en/v2/images/lifecycle.png)
-Format: ![Alt Text](Figure:LifeCyle-of-a-status-of-file)
 
 ### Knowing the Status of Your Files
 Running `git status` would let you know the status of your file
@@ -204,12 +218,14 @@ To see what you’ve changed but not yet staged,
 
 `git diff`
 
-> NOTE: `git diff` by itself doesn’t show all changes made since your last commit — only changes that are ?> still unstaged. If you’ve staged all of your changes, `git diff` will give you no output.
+> NOTE: `git diff` by itself doesn’t show all changes made since your last commit — only changes that are still unstaged. If you’ve staged all of your changes, `git diff` will give you no output.
 
 
 If you want to see what you’ve staged that will go into your next commit, you can use 
 
 `git diff --staged.`
+
+>It's always a good practice to review your changes before you commit
 
 ### Commiting Files:
 Now it's time to commit the staged files. A commit is equivalent to create a new snapshot. Note only staged files get commited and modified/untracked files that are not added using `git add` won't be commited. To commit the staged files.
@@ -222,6 +238,30 @@ You could also skip the entire staging process in case if you wanted to commit a
 
 `git commit -a -m 'commitMessageHere' `
 
+## Pull and Push
+Now that we have commited our changes, it's time to push the changes to the server. Note that the commit you just made is still in your local machine. By pushing it we would let the server know about the local changes we had commited.
+
+>It's always a good practice to `pull` before you `push` to avoid any conflicts.
+
+### Pull from a branch
+By pull, you are downloading the latest snapshot of git to your local machine.
+If you don't have any branch, you can simply use
+`git pull`
+
+But here, we are in a branch other than `master`. We need to pull latest snapshot of this branch, hence
+`git pull origin <branchName>`
+
+Once we had sucessfuly pulled without any conflicts, we are ready to push our commits.
+
+### Pushing to a branch
+If you don't have any branch, you can simply use
+`git push`
+
+If we need to push to a particular branch
+
+`git push origin <branchName>`
+
+## Merging Branches:
 
 ## Further Reading / Sources:
 1. [Git-Branching: Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
