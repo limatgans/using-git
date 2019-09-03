@@ -55,7 +55,6 @@ Source: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ## Creating a Repository
 
-### Creating a new Repository
 Creating a new repository needs you to login to Git repository hosting service such as Github, GitLab, or your own self hosted Git service. Once you have logged in, 
 
 1. Click on 'New Project' button.
@@ -70,8 +69,10 @@ Now that you have created your project, you can either clone the project or init
 ### Configuring the repository
 Its better to configure your repository before pushing / commiting. To have a global configuration.
 
-1. `git config --global user.name <yourUserName>`
-2. `git config --global user.email <yourUserEmailId>`
+```
+git config --global user.name <yourUserName>
+git config --global user.email <yourUserEmailId>
+```
 
 You can remove the `--global` option to configure just for a particular repository.
 
@@ -83,27 +84,32 @@ Example : http://github.com/ganesh/testProject2.git
 
 Now on the desired directory, open the terminal and follow the steps to clone.
 
-1. `git clone <gitURL>`
-2. `cd <repositoryName>`
-3. `touch README.md`
-4. `git add README.md`
-5. `git commit -m "add README"`
-6. `git push -u origin master`
-
+```
+git clone <gitURL>
+cd <repositoryName>
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+```
 Now you can start working on your directoy. We will get to add, commit, and push commands later in this document.
 
 ### Initializing a Repository in an Existing Directory
 If you want your repository to be controlled using Git then go to that project’s directory. Open Terminal and type
 
-1. `cd existing_folder`
-2. `git init`
+```
+cd existing_folder`
+git init`
+```
 
 This creates a new subdirectory named ```.git```. Note we haven't started tracking yet. To track,
 
-3. `git remote add origin <gitURL>`
-4. `git add .`
-5. `git commit -m "Initial commit"`
-6. `git push -u origin master`
+```
+git remote add origin <gitURL>`
+git add .`
+git commit -m "Initial commit"`
+git push -u origin master`
+```
 
 
 ## Creating a branch
@@ -122,7 +128,7 @@ Now that we have created a repository, let's create a new branch. On your termin
 
 ```git branch <branchName>```
 
-This creates a new branch, but you are still in master branch(In Git terminology your HEAD is still pointing to master branch).
+This creates a new branch, but you are still in master branch (In Git terminology your HEAD is still pointing to master branch).
 
 To shift/move the HEAD to the new branch we just created,
 
@@ -133,6 +139,88 @@ Alternatively, you can combine both the commands as follows
 ``` git checkout -b <branchName>```
 
 This creates the branch and checkouts(points the HEAD) to it immediately.
+
+## Changes and Commiting
+Now that you are in your branch, go ahead and make some changes. You can add file or modify existing files. Once you had made you changes, it's time to stage them.
+
+### LifeCyle of a status of file
+When a new file is added it's `untracked`, meaning which your git doesn't have any reference (snapshot) to this file.
+The files that Git knows about are called `tracked` files. 
+When a existing file inside your repository (`tracked file`) is changed, it's `modified`, meaning which the last snapshot of your file in your git is different from current file.
+A `staged` file is when you approve your changes and the file is now ready to be commited. 
+
+![LifeCyle of a status of file](https://git-scm.com/book/en/v2/images/lifecycle.png)
+Format: ![Alt Text](Figure:LifeCyle-of-a-status-of-file)
+
+### Knowing the Status of Your Files
+Running `git status` would let you know the status of your file
+
+If you run `git status` immediately after clone, you would find something like this
+
+```
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+```
+
+Lets say we create a new file 'CONTRIBUTING.md'. Upon running `git status`
+
+```
+$ echo 'My Project by me' > CONTRIBUTING.md
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    CONTRIBUTING.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+### Staging Files
+
+To track the changes use
+`git add .`
+
+To add only particular files
+`git add <fileName>`
+
+> NOTE: By adding files, you are staging the files to commit.
+
+```
+$ git add CONTRIBUTING.md
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    new file: CONTRIBUTING.md
+```
+
+To see what you’ve changed but not yet staged,
+
+`git diff`
+
+> NOTE: `git diff` by itself doesn’t show all changes made since your last commit — only changes that are ?> still unstaged. If you’ve staged all of your changes, `git diff` will give you no output.
+
+
+If you want to see what you’ve staged that will go into your next commit, you can use 
+
+`git diff --staged.`
+
+### Commiting Files:
+Now it's time to commit the staged files. A commit is equivalent to create a new snapshot. Note only staged files get commited and modified/untracked files that are not added using `git add` won't be commited. To commit the staged files.
+
+`git commit -m 'commitMessageHere' `
+
+Every commit needs a commit message. It's essential to provide proper message for project management purposes. Follow the commit message process that your team follows. You can also read more on conventional commits [here](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance) and [here](https://www.conventionalcommits.org/).
+
+You could also skip the entire staging process in case if you wanted to commit all the changes you had made. To do that 
+
+`git commit -a -m 'commitMessageHere' `
 
 
 ## Further Reading / Sources:
