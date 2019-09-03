@@ -9,7 +9,9 @@ Using GIT in your workflow
 5. [Changes and Commiting](#Changes-and-Commiting)
 6. [Pull and Push](#Pull-and-Push)
 7. [Merging Branches](#Merging-Branches)
-
+8. [Deleting a Branch](#Deleting-a-branch)
+9. [Viewing histories](#Viewing-histories)
+10. [Reverting a commit](#Reverting-a-commit)
 
 ## What is Git?
 In simple terms, **Git** is a *free* and *open source* *distributed* **version control system**.
@@ -275,7 +277,9 @@ Ideally, in a team, multiple people would be working on seperate multiple branch
 
 `git fetch`
 
-The command goes out to that remote project and pulls down all the data from that remote project that you don’t have yet.
+The command goes out to that remote project and pulls down all the data from that remote project that you don’t have yet. You have to checkout to your colleague's branch
+
+`git checkout <colleagueBranch>`
 
 ### Merging branches to master
 
@@ -362,9 +366,22 @@ This resolution has a little of each section, and the <<<<<<<, =======, and >>>>
 
 Now resolve each files (if merge conflicts occurs on multiple files) and `git add` them as you resolve. Once all merge conflicts are resolved, commit the changes and push them.
 
-You can also use visual mergetools like [Meld](https://meldmerge.org/), or if you are using VS Code, you can resolve it on the [editor itself] (https://code.visualstudio.com/docs/editor/versioncontrol#_merge-conflicts)
+You can also use visual mergetools like [Meld](https://meldmerge.org/), or if you are using VS Code, you can resolve it on the [editor itself](https://code.visualstudio.com/docs/editor/versioncontrol#_merge-conflicts)
 
 Alternatively you can run `git mergetool`, which fires up an appropriate visual merge tool and walks you through the conflicts.
+
+## Deleting a branch.
+Once merged, you can delete a branch if you want. To delete a branch,
+
+`git branch -d <yourBranchName>`
+
+## Viewing histories
+To view the history of commits, run `git log`. Press q to exit the log
+
+## Reverting a commit
+Sometimes you want to go back to some old commit and discard intermediate commits. Open the log and copy the commit id to which you want to revert to.
+
+Run `git revert <commitId>`
 
 ## Further Reading / Sources:
 1. [Git-Branching: Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
