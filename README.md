@@ -90,9 +90,9 @@ There are two ways to clone a repository, one using HTTPS another using SSH
 #### Using HTTPS
 The `https://` clone URLs are available on all repositories, public and private. These URLs work everywhere--even if you are behind a firewall or proxy. But everytime you do an operation involving remote directory, then you'll be asked for your username and password
 
-Note : The URL should start with `http://` or `https://` end in `.git` 
+Note : The URL should start with `http://` or `https://` and end in `.git` 
 
-Example : http://github.com/ganesh/testProject2.git
+Example : https://github.com/ganesh/testProject2.git
 
 Now on the desired directory, open the terminal and follow the steps to clone.
 
@@ -160,7 +160,7 @@ This creates the branch and checkouts(points the HEAD) to it immediately.
 ## Changes and Commiting
 Now that you are in your branch, go ahead and make some changes. You can add file or modify existing files. Once you had made you changes, it's time to stage them.
 
-### LifeCyle of a status of file
+### LifeCyle of a Status of file
 When a new file is added it's `untracked`, meaning which your git doesn't have any reference (snapshot) to this file.
 The files that Git knows about are called `tracked` files. 
 When a existing file inside your repository (`tracked file`) is changed, it's `modified`, meaning which the last snapshot of your file in your git is different from current file.
@@ -239,6 +239,8 @@ Every commit needs a commit message. It's essential to provide proper message fo
 You could also skip the entire staging process in case if you wanted to commit all the changes you had made. To do that 
 
 `git commit -a -m 'commitMessageHere' `
+
+> Note: The option -a automatically stage files that have been modified and deleted, but untracked files are not affected.
 
 ## Pull and Push
 Now that we have commited our changes, it's time to push the changes to the server. Note that the commit you just made is still in your local machine. By pushing it we would let the server know about the local changes we had commited.
@@ -377,6 +379,8 @@ Once merged, you can delete a branch if you want. To delete a branch,
 
 ## Viewing histories
 To view the history of commits, run `git log`. Press q to exit the log
+
+![git log on terminal](pics/git-log.png)
 
 ## Reverting a commit
 Sometimes you want to go back to some old commit and discard intermediate commits. Open the log and copy the commit id to which you want to revert to.
