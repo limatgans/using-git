@@ -11,7 +11,7 @@ Using GIT in your workflow
 7. [Merging Branches](#Merging-Branches)
 8. [Deleting a Branch](#Deleting-a-branch)
 9. [Viewing histories](#Viewing-histories)
-10. [Reverting a commit](#Reverting-a-commit)
+10. [Undoing a commit](#Undoing-a-commit)
 
 ## What is Git?
 In simple terms, **Git** is a *free* and *open source* *distributed* **version control system**.
@@ -382,13 +382,45 @@ To view the history of commits, run `git log`. Press q to exit the log
 
 ![git log on terminal](pics/git-log.png)
 
-## Reverting a commit
+> Note: Each commit has a unique SHA-1 identifying hash. These IDs are used to travel through the committed timeline and revisit commits.
+
+## Undoing a commit.
+We can undo a commit in following ways. `git revert` or `git checkout <commitId>` or `git reset`
+
+### Reverting a commit
 Sometimes you want to go back to some old commit and discard intermediate commits. Open the log and copy the commit id to which you want to revert to.
 
-Run `git revert <commitId>`
+Run `git revert <commit_Id_To_Be_Reverted>`
+
+> Note: Instead of removing the commit from the project history, `git revert` figures out how to invert the changes introduced by the commit and appends a new commit with the resulting inverse content. This prevents Git from losing history, which is important for the integrity of your revision history and for reliable collaboration. Always prefer `revert` whenever possible.
+
+## Checkout to a commit
+Previously we have seen that we can use `git checkout <branchName>` to move to a branch. We can also use the same checkout command to move back to an old commit.
+
+`git checkout <commitId>`
+
+> Note: Checking out a specific commit will put the repository in a "detached HEAD" state. This means you are no longer working on any branch.
+
+From the detached HEAD state, we can execute `git checkout -b <newBranch>`
+
+What we have done here is we have created `<newBranch>` using the copy of the old branch till the specified `<commitId>`
+
+### Reset
+`git reset --hard <commit_Id_To_Be_Removed>` is probably the cleanest way to have an undo. It resets the branch before the `<commit_Id_To_Be_Removed>` and removes the commit from Git History.
+
+> Doing a reset is great for local changes however it adds complications when working with a shared remote repository.
+
+### Revert vs Reset
+
+In general, the preffered way of undoing a commit is using `git revert`. A revert is safer than a reset because it will not remove any commits from a shared history. A revert will retain the commits you want to undo and create a new commit that inverts the undesired commit. 
+
+In short,
+- `git revert` is the best tool for undoing shared public changes
+- `git reset` is best used for undoing local private changes
 
 ## Further Reading / Sources:
 1. [Git-Branching: Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
 2. [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 3. [Merge Conflicts - Github Help Pages](https://help.github.com/en/articles/about-merge-conflicts)
 4. [Pro Git Book](https://git-scm.com/book/en/v2)
+5. [Undoing Changes in Git - Atlassian](https://www.atlassian.com/git/tutorials/undoing-changes)
