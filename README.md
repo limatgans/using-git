@@ -1,6 +1,8 @@
 # using-git
 Using GIT in your workflow
 
+> This documentation was written as a part of training modules for beginners at [Think 42 Labs](https://www.think42labs.com).
+
 ## Table of Contents
 1. [What is Git?](#What-is-Git)
 2. [Installing Git](#Installing-Git)
@@ -61,6 +63,8 @@ Source: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ## Creating a Repository
 
+Repository in Git could be considered similar to your project folder that Git could track all the changes happening inside the folder.
+
 Creating a new repository needs you to login to Git repository hosting service such as Github, GitLab, or your own self hosted Git service. Once you have logged in, 
 
 1. Click on 'New Project' button.
@@ -73,7 +77,7 @@ Creating a new repository needs you to login to Git repository hosting service s
 Now that you have created your project, you can either clone the project or initializing a Repository in an Existing Directory
 
 ### Configuring the repository
-Its better to configure your repository before pushing / commiting. To have a global configuration.
+It's better to configure your repository before pushing / commiting. To have a global configuration.
 
 ```
 git config --global user.name <yourUserName>
@@ -115,17 +119,17 @@ The SSH protocol provides additional security using SSH-keypair and allows you t
 If you want your repository to be controlled using Git then go to that project’s directory. Open Terminal and type
 
 ```
-cd existing_folder`
-git init`
+cd existing_folder
+git init
 ```
 
 This creates a new subdirectory named ```.git```. Note we haven't started tracking yet. To track,
 
 ```
-git remote add origin <gitURL>`
-git add .`
-git commit -m "Initial commit"`
-git push -u origin master`
+git remote add origin <gitURL>
+git add .
+git commit -m "Initial commit"
+git push -u origin master
 ```
 
 
@@ -135,6 +139,8 @@ git push -u origin master`
 In simplest terms, branching allows you to seperate from the main line (with entire history of project at that point) so that your further development doesn't disturb other works. Branching is a crucial part in several VCS. A major advantage of Git is that branching operations are lightweight thereby making them superfast. 
 
 The default branch in a Git repository is ```master```
+
+![Branching Example](pics/branching-example.png)
 
 ### Listing the branches in a project
 To get the list of all the branches in your repository.
@@ -203,7 +209,7 @@ To track the changes use
 To add only particular files
 `git add <fileName>`
 
-> NOTE: By adding files, you are staging the files to commit.
+> NOTE: By adding files using `git add`, you are staging the files to commit.
 
 ```
 $ git add CONTRIBUTING.md
@@ -225,18 +231,18 @@ To see what you’ve changed but not yet staged,
 
 If you want to see what you’ve staged that will go into your next commit, you can use 
 
-`git diff --staged.`
+`git diff --staged`
 
 >It's always a good practice to review your changes before you commit
 
 ### Commiting Files:
-Now it's time to commit the staged files. A commit is equivalent to create a new snapshot. Note only staged files get commited and modified/untracked files that are not added using `git add` won't be commited. To commit the staged files.
+Now it's time to commit the staged files. A commit is equivalent to creating a new snapshot. Note only staged files get commited and modified/untracked files that are not added using `git add` won't be commited. To commit the staged files.
 
 `git commit -m 'commitMessageHere' `
 
 Every commit needs a commit message. It's essential to provide proper message for project management purposes. Follow the commit message process that your team follows. You can also read more on conventional commits [here](https://github.com/conventional-changelog/standard-version#commit-message-convention-at-a-glance) and [here](https://www.conventionalcommits.org/).
 
-You could also skip the entire staging process in case if you wanted to commit all the changes you had made. To do that 
+You could also skip the entire staging process in case if you wanted to commit all the *modified* files. To do that 
 
 `git commit -a -m 'commitMessageHere' `
 
@@ -245,7 +251,7 @@ You could also skip the entire staging process in case if you wanted to commit a
 ## Pull and Push
 Now that we have commited our changes, it's time to push the changes to the server. Note that the commit you just made is still in your local machine. By pushing it we would let the server know about the local changes we had commited.
 
->It's always a good practice to `pull` before you `push` to avoid any conflicts.
+> It's always a good practice to `pull` first before you `push` to avoid any conflicts.
 
 ### Pull from a branch
 By pull, you are downloading the latest snapshot of git to your local machine.
@@ -253,6 +259,7 @@ If you don't have any branches, you can simply use
 `git pull`
 
 But here, we are in a branch other than `master`. We need to pull latest snapshot of this branch, hence
+
 `git pull origin <branchName>`
 
 Once we have sucessfuly pulled without any conflicts, we are ready to push our commits.
@@ -265,8 +272,32 @@ If we need to push to a particular branch
 
 `git push origin <branchName>`
 
+## A brief intro on Git Flow
+(Taken from `A successful Git branching model by Vincent Driessen` )
+
+Ideally in a Git workflow, there are two main branches - **master** and **develop**
+
+- **master** branch should be used for production ready states
+- **develop** branch should have latest delivered development changes
+
+![Develop branch and Master Branch](https://nvie.com/img/main-branches@2x.png)
+
+And rest of the feature branches must be branched from `develop`
+
+![Develop and Feature Branch](https://nvie.com/img/fb@2x.png)
+
+> This section is just to give you an intro on a popular Git Workflow. Your team might be using slightly different workflow. Discuss with your team to know more.
+
+![The Git Flow](https://nvie.com/img/git-model@2x.png)
+
+> More on this Git Flow could be found here [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) 
+
+
 ## Merging Branches:
-Let's say you have completed all the changes to your branch and pushed it. Now `master` branch doesn't know about the changes you have done on your branch. To let master branch know, we need to merge our branch to master. To merge branches, make sure to checkout to **destination branch** (ex: master) and use `git merge <sourceBranch>` to merge
+Let's say you have completed all the changes to your feature branch and pushed it. Now `master` (or `develop`) branch doesn't know about the changes you have done on your branch. To let master branch know, we need to merge our branch to master. To merge branches, make sure to checkout to **destination branch** (ex: master) and use 
+
+`git merge <sourceBranch>` 
+
 
 > Note: Sometimes if you are new to the team, you might not have write access to the **master** or **develop** branch. If that's the case, you should raise a **Pull Request**
 
@@ -285,7 +316,11 @@ The command goes out to that remote project and pulls down all the data from tha
 
 ### Merging branches to master
 
-Follow the steps if you want to merge your branch to the master.
+Follow the steps if you want to merge your branch to the master. 
+
+> We are using master branch as an example here. You can follow the same steps for any other branches too!
+
+> Its always a good practice to make sure that you have pushed your changes in branch before merging!
 
 ```
 git checkout master
@@ -314,9 +349,9 @@ In certain situations, Git does a fast forward when you merge a branch that is a
 
 ### Resolving Merge Conflicts.
 
-Merge conflicts happen when you merge branches that have competing commits, and Git needs your help to decide which changes to incorporate in the final merge.
-
 Often, merge conflicts happen when people make different changes to the same line of the same file, or when one person edits a file and another person deletes the same file.
+
+In general, Merge conflicts happen when you merge branches that have competing commits, and Git needs your help to decide which changes to incorporate in the final merge.
 
 If you get a merge conflict for a first time, don't panic! I panicked the first time and sort of messed up the whole deployment process.
 
@@ -339,9 +374,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 ```
 
-If you go to your file, you would find `Merge Head` there.
-
-Your file contains a section that looks something like this:
+If you go to that file, you would find `Merge Head`, a section that looks something like this:
 
 ```
 `<<<<<<< HEAD:index.html
@@ -355,7 +388,9 @@ Your file contains a section that looks something like this:
 
 The top part above ====== is your current change in your branch *iss53* and the bottom part is the incoming change from *master*. Now decide which one should go to final merge. 
 
-In order to resolve the conflict, you have to either choose one side or the other or merge both contents yourself. Here we have resolved this conflict by replacing the entire block with this:
+In order to resolve the conflict, you have to either choose one side or the other or merge both contents yourself. 
+
+Here we have resolved this conflict by replacing the entire block with this:
 
 ```
 <div id="footer">
@@ -431,6 +466,12 @@ In general, the preffered way of undoing a commit is using `git revert`. A rever
 In short,
 - `git revert` is the best tool for undoing shared public changes
 - `git reset` is best used for undoing local private changes
+
+## Forking a Repository
+
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+More on Forking could be found here (https://help.github.com/en/articles/fork-a-repo)
 
 ## Further Reading / Sources:
 1. [Git-Branching: Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
