@@ -1,7 +1,7 @@
 # using-git
 Using GIT in your workflow
 
-> This documentation was written as a part of training modules for beginners at [Think 42 Labs](https://www.think42labs.com).
+> This documentation was written as a part of training modules for beginners at [Think42 Labs](https://www.think42labs.com).
 
 ## Table of Contents
 1. [What is Git?](#What-is-Git)
@@ -10,10 +10,13 @@ Using GIT in your workflow
 4. [Creating a branch](#Creating-a-branch)
 5. [Changes and Commiting](#Changes-and-Commiting)
 6. [Pull and Push](#Pull-and-Push)
-7. [Merging Branches](#Merging-Branches)
-8. [Deleting a Branch](#Deleting-a-branch)
-9. [Viewing histories](#Viewing-histories)
-10. [Undoing a commit](#Undoing-a-commit)
+7. [A brief intro to Git Flow](#A-brief-intro-to-Git-Flow)
+8. [Merging Branches](#Merging-Branches)
+9. [Deleting a Branch](#Deleting-a-branch)
+10. [Viewing histories](#Viewing-histories)
+11. [Undoing a commit](#Undoing-a-commit)
+12. [Forking a Repository](#Forking-a-Repository)
+13. [Ignoring files](#Ignoring-files)
 
 ## What is Git?
 In simple terms, **Git** is a *free* and *open source* *distributed* **version control system**.
@@ -272,7 +275,7 @@ If we need to push to a particular branch
 
 `git push origin <branchName>`
 
-## A brief intro on Git Flow
+## A brief intro to Git Flow
 (Taken from `A successful Git branching model by Vincent Driessen` )
 
 Ideally in a Git workflow, there are two main branches - **master** and **develop**
@@ -286,6 +289,8 @@ And rest of the feature branches must be branched from `develop`
 
 ![Develop and Feature Branch](https://nvie.com/img/fb@2x.png)
 
+Once a feature branch is completed, it should be merged back to **develop**. After couple of features are merged into develop, it should be tested and should be merged to **master** for production release.
+ 
 > This section is just to give you an intro on a popular Git Workflow. Your team might be using slightly different workflow. Discuss with your team to know more.
 
 ![The Git Flow](https://nvie.com/img/git-model@2x.png)
@@ -472,6 +477,27 @@ In short,
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
 More on Forking could be found here (https://help.github.com/en/articles/fork-a-repo)
+
+## Ignoring files
+
+Sometimes you might not want git to track certain files (for example compressed files like .rar). To do that, create a `.gitignore` file and add exceptions there.
+
+Here's an example of a .gitignore file that ignores compressed files with extensions (such as .rar, .zip etc)
+
+```
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+```
+
+In case if you wanted a *predefined template* head to [gitignore.io](http://gitignore.io/) and search for your programming lanugage, ide and OS
+
+Alternatively you can also head to [github/gitignore](https://github.com/github/gitignore) to download gitignore templates
 
 ## Further Reading / Sources:
 1. [Git-Branching: Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
