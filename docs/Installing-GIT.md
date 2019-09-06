@@ -33,5 +33,5 @@ Follow any one of the following steps if you don't have git already in your mach
 
 Source: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-- Next - [Creating a Repository](docs/Installing-GIT.md)
-- Previous - [What is Git?](docs/What-is-Git.md)
+- Next - [Creating a Repository](./Installing-GIT.md)
+- Previous - [What is Git?](./What-is-Git.md)

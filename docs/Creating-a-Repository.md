@@ -69,4 +69,4 @@ git commit -m "Initial commit"
 git push -u origin master
 ```
 - Next - 
-- Previous - [Installing GIT](docs/Installing-GIT.md)
+- Previous - [Installing GIT](./Installing-GIT.md)
