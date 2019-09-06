@@ -5,7 +5,7 @@ In simplest terms, branching allows you to seperate from the main line (with ent
 
 The default branch in a Git repository is ```master```
 
-![Branching Example](../pics/branching-example.png)
+![Branching Example](./pics/branching-example.png)
 
 ### Listing the branches in a project
 To get the list of all the branches in your repository.
