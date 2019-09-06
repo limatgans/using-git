@@ -31,7 +31,7 @@ Follow any one of the following steps if you don't have git already in your mach
 3. [GitHub Desktop Website](https://desktop.github.com/) or
 4. If you have [Homebrew](https://brew.sh/) already installed then run `brew install git` on a terminal
 
-Source: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+Source: [Pro Git Book](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 - Next - [Creating a Repository](./Creating-a-Repository.md)
 - Previous - [What is Git?](./What-is-Git.md)   
