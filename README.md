@@ -89,8 +89,8 @@ git config --global user.email <yourUserEmailId>
 
 You can remove the `--global` option to configure just for a particular repository.
 
-### Clonning a repository
-Clonning simply means to download the project from *remote server* onto to *your local machine* and start working on it. To clone a repository get the URL of your project found in the project page itself.
+### Cloning a repository
+Cloning simply means to download the project from *remote server* onto to *your local machine* and start working on it. To clone a repository get the URL of your project found in the project page itself.
 
 There are two ways to clone a repository, one using HTTPS another using SSH
 
