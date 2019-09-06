@@ -83,7 +83,7 @@ You could also skip the entire staging process in case if you wanted to commit a
 
 > Note: The option -a automatically stage files that have been modified and deleted, but untracked files are not affected.
 
-- Previous - [Creating a branch](./Creating-a-branch.md)  Next - [Pull and Push](./Pull-and-Push.md)
-
+- Next - [Pull and Push](./Pull-and-Push.md)
+- Previous - [Creating a branch](./Creating-a-branch.md)  
 
 - [Back to Main Page](./index.md)

@@ -20,6 +20,7 @@ Once a feature branch is completed, it should be merged back to **develop**. Aft
 
 > More on this Git Flow could be found here [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) 
 
-- Previous - [Pull and Push](./Pull-and-Push.md)   Next - [Merging Branches](./Merging-Branches.md)
+- Next - [Merging Branches](./Merging-Branches.md)
+- Previous - [Pull and Push](./Pull-and-Push.md)
 
 - [Back to Main Page](./index.md)

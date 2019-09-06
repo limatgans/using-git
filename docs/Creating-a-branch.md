@@ -28,7 +28,8 @@ Alternatively, you can combine both the commands as follows
 
 This creates the branch and checkouts(points the HEAD) to it immediately.
 
-- Previous - [Creating a Repository](./Creating-a-Repository.md)  Next - [Changes and Commiting](./Changes-and-Commiting.md)
+- Next - [Changes and Commiting](./Changes-and-Commiting.md)
+- Previous - [Creating a Repository](./Creating-a-Repository.md)  
 
 
 - [Back to Main Page](./index.md)

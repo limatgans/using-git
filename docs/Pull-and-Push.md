@@ -22,7 +22,7 @@ If we need to push to a particular branch
 
 `git push origin <branchName>`
 
-- Previous - [Changes and Commiting](./Changes-and-Commiting.md)   Next - [A brief intro to Git Flow](./A-brief-intro-to-Git-Flow.md)
-
+- Next - [A brief intro to Git Flow](./A-brief-intro-to-Git-Flow.md)
+- Previous - [Changes and Commiting](./Changes-and-Commiting.md)   
 
 - [Back to Main Page](./index.md)
