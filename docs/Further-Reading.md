@@ -5,5 +5,6 @@
 4. [Pro Git Book](https://git-scm.com/book/en/v2)
 5. [Undoing Changes in Git - Atlassian](https://www.atlassian.com/git/tutorials/undoing-changes)
 
-- Next - 
 - Previous - [Ignoring files](./Ignoring-files.md)
+
+-[Back to Main Page](./index.md)

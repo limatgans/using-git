@@ -1,6 +1,3 @@
-# using-git
-Using GIT in your workflow
-
 > This documentation was written as a part of training modules for beginners at [Think42 Labs](https://www.think42labs.com).
 
 ## Table of Contents
