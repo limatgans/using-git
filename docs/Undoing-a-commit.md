@@ -10,17 +10,17 @@ Run `git revert <commit_Id_To_Be_Reverted>`
 
 Assume following `git log`.
 
-![git log before reverting](pics/before-git-revert-log.png)
+![git log before reverting](../pics/before-git-revert-log.png)
 
 Now we want to revert the commit id `<12026a0c847a8435a2281a4ec33ffbefd4edca49>`.
 
-![git revert](pics/git-revert.png)
+![git revert](../pics/git-revert.png)
 
 Just like commit message, git asks us for revert message in the editor. Type :wq in case of Vim editor and press enter.
 
 Now if we log, we can see a new revert commit and the old commit intact in history.
 
-![git log after reverting](pics/git-log-after-git-revert.png)
+![git log after reverting](../pics/git-log-after-git-revert.png)
 
 ### Checkout to a commit
 Previously we have seen that we can use `git checkout <branchName>` to move to a branch. We can also use the same checkout command to move back to an old commit.
