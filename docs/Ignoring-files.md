@@ -19,7 +19,7 @@ In case if you wanted a *predefined template* head to [gitignore.io](http://giti
 
 Alternatively you can also head to [github/gitignore](https://github.com/github/gitignore) to download gitignore templates
 
-- Previous - [Forking a Repository](./Forking-a-Repository.md) | Next - [Further Reading / Sources](./Further-Reading.md)
+- Previous - [Forking a Repository](./Forking-a-Repository.md)  Next - [Further Reading / Sources](./Further-Reading.md)
 
 
--[Back to Main Page](./index.md)
+- [Back to Main Page](./index.md)

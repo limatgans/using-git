@@ -112,7 +112,7 @@ You can also use visual mergetools like [Meld](https://meldmerge.org/), or if yo
 
 Alternatively you can run `git mergetool`, which fires up an appropriate visual merge tool and walks you through the conflicts.
 
-- Previous - [A brief intro to Git Flow](./A-brief-intro-to-Git-Flow.md) |  Next - [Deleting a Branch](./Deleting-a-branch.md)
+- Previous - [A brief intro to Git Flow](./A-brief-intro-to-Git-Flow.md)   Next - [Deleting a Branch](./Deleting-a-branch.md)
 
 
--[Back to Main Page](./index.md)
+- [Back to Main Page](./index.md)

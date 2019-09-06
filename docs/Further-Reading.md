@@ -7,4 +7,4 @@
 
 - Previous - [Ignoring files](./Ignoring-files.md)
 
--[Back to Main Page](./index.md)
+- [Back to Main Page](./index.md)
