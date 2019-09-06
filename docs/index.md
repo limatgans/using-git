@@ -5,7 +5,7 @@ Using GIT in your workflow
 
 ## Table of Contents
 1. [What is Git?](./What-is-Git.md)
-2. [Installing Git](./Installing-Git.md)
+2. [Installing Git](./Installing-GIT.md)
 3. [Creating a Repository](./Creating-a-Repository.md)
 4. [Creating a branch](./Creating-a-branch.md)
 5. [Changes and Commiting](./Changes-and-Commiting.md)

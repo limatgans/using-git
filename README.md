@@ -448,7 +448,7 @@ Now if we log, we can see a new revert commit and the old commit intact in histo
 
 ![git log after reverting](pics/git-log-after-git-revert.png)
 
-## Checkout to a commit
+### Checkout to a commit
 Previously we have seen that we can use `git checkout <branchName>` to move to a branch. We can also use the same checkout command to move back to an old commit.
 
 `git checkout <commitId>`

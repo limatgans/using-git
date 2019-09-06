@@ -9,5 +9,5 @@ Central VCS (such as CVS, Subversion, and Perforce) have a single server that co
 
 On the other hand, Distributed VCS (such as **Git**, Mercurial, Bazaar or Darcs) fully mirrors the project from server onto the client machine (including the entire history) instead of just snapshots. In case of server failure, any of the client repositories can be copied back up to the server to restore it 
 
-- 
-- Previous - [Table of Contents](./index.md) | Next - [Installing GIT](./Installing-GIT.md)
+- Next - [Installing GIT](./Installing-GIT.md)
+- Previous - [Table of Contents](./index.md)

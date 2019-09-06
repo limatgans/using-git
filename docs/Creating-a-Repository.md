@@ -68,5 +68,5 @@ git add .
 git commit -m "Initial commit"
 git push -u origin master
 ```
-- Next - 
+- Next - [Creating a branch](./Creating-a-branch.md)
 - Previous - [Installing GIT](./Installing-GIT.md)
