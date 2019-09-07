@@ -143,7 +143,7 @@ In simplest terms, branching allows you to seperate from the main line (with ent
 
 The default branch in a Git repository is ```master```
 
-![Branching Example](pics/branching-example.png)
+![Branching Example](docs/pics/branching-example.png)
 
 ### Listing the branches in a project
 To get the list of all the branches in your repository.
@@ -420,7 +420,7 @@ Once merged, you can delete a branch if you want. To delete a branch,
 ## Viewing histories
 To view the history of commits, run `git log`. Press q to exit the log
 
-![git log on terminal](pics/git-log.png)
+![git log on terminal](docs/pics/git-log.png)
 
 > Note: Each commit has a unique SHA-1 identifying hash. These IDs are used to travel through the committed timeline and revisit commits.
 
@@ -436,17 +436,17 @@ Run `git revert <commit_Id_To_Be_Reverted>`
 
 Assume following `git log`.
 
-![git log before reverting](pics/before-git-revert-log.png)
+![git log before reverting](docs/pics/before-git-revert-log.png)
 
 Now we want to revert the commit id `<12026a0c847a8435a2281a4ec33ffbefd4edca49>`.
 
-![git revert](pics/git-revert.png)
+![git revert](docs/pics/git-revert.png)
 
 Just like commit message, git asks us for revert message in the editor. Type :wq in case of Vim editor and press enter.
 
 Now if we log, we can see a new revert commit and the old commit intact in history.
 
-![git log after reverting](pics/git-log-after-git-revert.png)
+![git log after reverting](docs/pics/git-log-after-git-revert.png)
 
 ### Checkout to a commit
 Previously we have seen that we can use `git checkout <branchName>` to move to a branch. We can also use the same checkout command to move back to an old commit.
