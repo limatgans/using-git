@@ -18,7 +18,7 @@ Using GIT in your workflow
 12. [Forking a Repository](#Forking-a-Repository)
 13. [Ignoring files](#Ignoring-files)
 
-> This repository is hosted on [limatgans.github.io](https:limatgans.github.io/using-git)
+> This repository is hosted on [limatgans.github.io](https://limatgans.github.io/using-git)
 
 ## What is Git?
 In simple terms, **Git** is a *free* and *open source* *distributed* **version control system**.
